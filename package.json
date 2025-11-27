@@ -1,0 +1,48 @@
+{
+  "name": "changeling-5e",
+  "version": "1.0.0",
+  "description": "ESLint & other utiltiies for developing Changeling 5e",
+  "scripts": {
+    "gulp": "gulp",
+    "eslint": "eslint -c .github/linters/.eslintrc.yml *"
+  },
+  "browserslist": [
+    "last 3 versions"
+  ],
+  "author": "Veilza",
+  "license": "./license",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/eslint-parser": "^7.25.1",
+    "eslint": "^9.9.0",
+    "eslint-plugin-hbs": "^1.0.3",
+    "eslint-plugin-import": "^2.32.0",
+    "globals": "^15.9.0",
+    "gulp": "^5.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-less": "^5.0.0",
+    "less": "^4.2.0"
+  },
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WoD5E-Developers/changeling-5e.git"
+  },
+  "keywords": [
+    "world-of-darkness",
+    "foundryvtt",
+    "foundryvtt-module",
+    "changeling-the-dreaming",
+    "changeling"
+  ],
+  "bugs": {
+    "url": "https://github.com/WoD5E-Developers/changeling-5e/issues"
+  },
+  "homepage": "https://github.com/WoD5E-Developers/changeling-5e#readme",
+  "dependencies": {
+    "@eslint/compat": "^1.4.1",
+    "eslint-plugin-prettier": "^5.5.4"
+  }
+}

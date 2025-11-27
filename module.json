@@ -1,0 +1,134 @@
+{
+	"id": "changeling-5e",
+	"title": "Changeling the Dreaming 5e",
+	"description": "An implementation of the Changeling the Dreaming 5e system, compatible with the WOD5E system for FoundryVTT.",
+  "authors": [
+    {
+      "name": "Veilza",
+      "discord": "veilza",
+      "flags": {
+        "twitter": "https://twitter.com/VeilzaKinsemi",
+        "github": "https://github.com/Veilza",
+        "ko-fi": "https://ko-fi.com/VeilzaKinsemi"
+      }
+    }
+  ],
+	"version": "1.0.0",
+	"compatibility": {
+		"minimum": 13,
+		"verified": 13.351
+	},
+	"socket": "true",
+  "esmodules": [
+    "module/main.js"
+  ],
+  "styles": [
+    "styling/ctd5e-styling.css"
+  ],
+  "license": "./LICENSE",
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "lang/en.json"
+		}
+	],
+	"manifest": "https://github.com/WoD5e-Developers/changeling-5e/releases/download/1.0.0/module.json",
+	"url": "https://github.com/WoD5e-Developers/changeling-5e",
+	"download": "https://github.com/WoD5e-Developers/changeling-5e/releases/download/1.0.0/changeling-5e.zip",
+	"readme": "https://github.com/WoD5e-Developers/changeling-5e/blob/main/readme.md",
+	"changelog": "https://github.com/WoD5e-Developers/changeling-5e/releases/tag/1.0.0",
+  "documentTypes": {
+    "Actor": {
+      "changeling": {
+        "booleanFields": [
+          "locked"
+        ],
+        "stringFields": [
+          "group",
+          "bio.age.trueage",
+          "bio.dateof.birth",
+          "headers.concept",
+          "headers.chronicle",
+          "headers.desire"
+        ],
+        "numberFields": [
+          "exp.value",
+          "exp.max",
+          "derivedXP.totalXP",
+          "derivedXP.remainingXP",
+          "humanity.value",
+          "humanity.stains",
+          "health.aggravated",
+          "health.superficial",
+          "health.max",
+          "health.value",
+          "willpower.aggravated",
+          "willpower.superficial",
+          "willpower.max",
+          "willpower.value",
+          "attributes.strength.value",
+          "attributes.charisma.value",
+          "attributes.intelligence.value",
+          "attributes.dexterity.value",
+          "attributes.manipulation.value",
+          "attributes.wits.value",
+          "attributes.stamina.value",
+          "attributes.composure.value",
+          "attributes.resolve.value"
+        ],
+        "htmlFields": [
+          "description",
+          "notes",
+          "privatenotes",
+          "biography",
+          "appearance",
+          "equipment",
+          "bio.history",
+          "headers.touchstones",
+          "headers.tenets"
+        ]
+      }
+    },
+    "Item": {
+      "kith": {
+        "htmlFields": [
+          "description"
+        ],
+        "stringFields": [
+          "affinity",
+          "source.book",
+          "source.page"
+        ]
+      }
+    }
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "wod5e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "5.3.7"
+        }
+      }
+    ]
+  },
+  "flags": {
+    "hotReload": {
+      "extensions": ["css", "hbs", "json"],
+      "paths": ["css", "templates", "lang"]
+    },
+    "wod5e": {
+      "customSystems": [
+        {
+          "id": "changeling",
+          "label": "changeling-5e.Changeling",
+          "usesResourceOnAdvancedDice": true,
+          "resourceValuePath": "hunger.value",
+          "resourceUsage": "add"
+        }
+      ]
+    }
+  }
+}
