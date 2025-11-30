@@ -3,6 +3,7 @@
   "TYPES.Item.changeling-5e.kith": "Kith",
   "changeling-5e": {
     "Affinity": "Affinity",
+    "changeling": "Changeling",
     "Changeling": "Changeling",
     "Kith": "Kith"
   }
