@@ -34,7 +34,7 @@ The version of Changeling the Dreaming 5e that this module is based on was writt
 
 # System License
 
-World of Darkness 5e System for Foundry VTT
+Changeling 5e, A Module for Foundry VTT
 Copyright (C) 2025, World of Darkness 5e Developers
 
 This program is free software: you can redistribute it and/or modify
