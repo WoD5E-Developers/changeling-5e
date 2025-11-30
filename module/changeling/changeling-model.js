@@ -55,7 +55,7 @@ export class ChangelingModel extends foundry.abstract.TypeDataModel {
      * Humanity
      */
     schema.humanity = new fields.SchemaField({
-      value: new fields.NumberField({ initial: 0 }),
+      value: new fields.NumberField({ initial: 7 }),
       stains: new fields.NumberField({ initial: 0 })
     })
 
@@ -65,8 +65,8 @@ export class ChangelingModel extends foundry.abstract.TypeDataModel {
     schema.health = new fields.SchemaField({
       aggravated: new fields.NumberField({ initial: 0 }),
       superficial: new fields.NumberField({ initial: 0 }),
-      max: new fields.NumberField({ initial: 0 }),
-      value: new fields.NumberField({ initial: 0 })
+      max: new fields.NumberField({ initial: 5 }),
+      value: new fields.NumberField({ initial: 5 })
     })
 
     /**
@@ -75,8 +75,8 @@ export class ChangelingModel extends foundry.abstract.TypeDataModel {
     schema.willpower = new fields.SchemaField({
       aggravated: new fields.NumberField({ initial: 0 }),
       superficial: new fields.NumberField({ initial: 0 }),
-      max: new fields.NumberField({ initial: 0 }),
-      value: new fields.NumberField({ initial: 0 })
+      max: new fields.NumberField({ initial: 5 }),
+      value: new fields.NumberField({ initial: 5 })
     })
 
     /**
