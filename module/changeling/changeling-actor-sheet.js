@@ -93,34 +93,51 @@ export class ChangelingActorSheet extends HandlebarsApplicationMixin(WoDActorBas
   async prepareContext() {
     const context = await super._prepareContext()
 
-    // The description field
-    context.description = await foundry.applications.ux.TextEditor.implementation.enrichHTML(
-      this.object.system.description,
-      {
-        async: true,
-        secrets: this.object.isOwner,
-        relativeTo: this.object
-      }
-    )
+    return context
+  }
 
-    // Private and Public notes
-    context.note = {
-      public: await foundry.applications.ux.TextEditor.implementation.enrichHTML(
-        this.object.system.note.public,
-        {
-          async: true,
-          secrets: this.object.isOwner,
-          relativeTo: this.object
-        }
-      ),
-      private: await foundry.applications.ux.TextEditor.implementation.enrichHTML(
-        this.object.system.note.private,
-        {
-          async: true,
-          secrets: this.object.isOwner,
-          relativeTo: this.object
-        }
-      )
+  async _preparePartContext(partId, context, options) {
+    // Inherit any preparation from the extended class
+    context = { ...(await super._preparePartContext(partId, context, options)) }
+
+    // Top-level variables
+    const actor = this.actor
+
+    // Prepare each page context
+    switch (partId) {
+      // Stats
+      case 'stats':
+        return this.prepareStatsContext(context, actor)
+
+      // Experience
+      case 'experience':
+        return this.prepareExperienceContext(context, actor)
+
+      // Features
+      case 'features':
+        return this.prepareFeaturesContext(context, actor)
+
+      // Equipment
+      case 'equipment':
+        return this.prepareEquipmentContext(context, actor)
+
+      // Biography
+      case 'biography':
+        return this.prepareBiographyContext(context, actor)
+
+      // Notepad
+      case 'notepad':
+        return this.prepareNotepadContext(context, actor)
+
+      // Settings
+      case 'settings':
+        return this.prepareSettingsContext(context, actor)
+
+      // Limited view
+      case 'limited':
+        return this.prepareLimitedContext(context, actor)
     }
+
+    return context
   }
 }
